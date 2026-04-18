@@ -15,6 +15,7 @@ from config import (
     MAX_RESULTS_PER_KEYWORD,
     MAX_COMMENTS_PER_VIDEO,
     YOUTUBE_KEYWORDS,
+    YOUTUBE_FILTER_KEYWORDS
 )
 
 load_dotenv()
@@ -81,6 +82,10 @@ def search_videos(
                 if item["id"].get("videoId")
                 and item["id"]["videoId"] not in existing_ids
                 and item["id"]["videoId"] not in discorverd_ids
+                and not any(
+                    fk in item["snippet"]["title"].lower()
+                    for fk in YOUTUBE_FILTER_KEYWORDS
+                )
             ]
 
             discorverd_ids.extend(new_vids)
