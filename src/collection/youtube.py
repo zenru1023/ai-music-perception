@@ -171,6 +171,12 @@ def parse_args() -> argparse.Namespace:
         help="Skip searching for new video IDs and use existing list"
     )
     
+    parser.add_argument(
+        "--search-only",
+        action="store_true",
+        help="Only search for new video IDs without collecting comments"
+    )
+    
     return parser.parse_args()
 
 
@@ -186,6 +192,10 @@ def main() -> None:
         save_new_ids(new_ids)
     else:
         info("Skipping video search step")
+        
+    if args.search_only:
+        info("Search-only mode: skipping comment collection")
+        return
         
     all_ids = load_video_ids()
     info(f"=== Collecting comments (Total videos: {len(all_ids)}) ===")
