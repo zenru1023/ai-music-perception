@@ -11,3 +11,9 @@ wheels/
 
 # Custom
 .env
+
+data/*
+!data/.gitkeep
+
+results/*
+!results/.gitkeep
