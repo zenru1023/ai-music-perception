@@ -19,5 +19,28 @@ MAX_COMMENTS_PER_VIDEO: int = 1000
 
 # YouTube Search Keywords
 YOUTUBE_KEYWORDS: List[str] = [ 
-    # TODO: 키워드 추가
+    "AI music reaction",
+    "AI generated music opinion",
+    "AI music is scary",
+    "AI music is amazing",
+    "AI music is bad",
+    "AI music is ruined music industry",
+    "AI vs human music",
+    "AI music vs real music",
+    "can AI replace musicians",
+    "AI music vs artists debate",
+    "AI song controversy",
+    "AI music copyright issues",
+    "AI music ethical concerns"
+]
+
+YOUTUBE_FILTER_KEYWORDS: List[str] = [
+    "tutorial", "how to", "how-to", "guide",
+    "course", "lesson", "learn", "make", "creating",
+    "generate", "generator tutorial", "lofi", "beats",
+    "chill", "study", "sleep", "background music",
+    "playlist", "mix", "1 hour", "10 hours", "loop",
+    "official", "mv", "music video", "lyrics", "promo",
+    "teaser", "trailer", "out now", "stream now", "ai song",
+    "ai generated song", "made by ai", "full song", "cover", "remix"
 ]
